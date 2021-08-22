@@ -22,7 +22,7 @@ For checkout, **stripe API** was implemented. A copy of the invoice will be sent
 
 ### Admin :
 
-Access: *goodbuy/admin
+Access: goodbuy/admin
     
 
 
