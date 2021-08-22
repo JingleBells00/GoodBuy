@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 //All Client controller routes
-Route::get('/', [ClientController::class, 'home']);
+Route::get('/', [ClientController::class, 'index']);
 
 Route::get('/cart', [ClientController::class, 'cart']);
 

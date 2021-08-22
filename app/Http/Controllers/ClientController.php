@@ -17,11 +17,11 @@ use Stripe\Stripe;
 class ClientController extends Controller
 {
  //
- public function home()
+ public function index()
  {
   $products = Product::where('status', 1)->get(); //if product is activated
   $sliders = Slider::where('status', 1)->get();
-  return view('client.home')->with('sliders', $sliders)->with('products', $products);
+  return view('client.index')->with('sliders', $sliders)->with('products', $products);
 
  }
 
