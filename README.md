@@ -34,6 +34,7 @@ The admin webpages consists of **27 routes** with different functions. The funct
 Of the 27 routes, 11 routes can be viewed and have a blade, dynamic html file which is accessable to all admins.
 To be allowed to enter the backend admin you have to first go through the **laravel authentication system**, which will require you to signup first. An option is available which will send a email token for **resetting your password** if you forgot it. To signup use the url:
 *goodbuy/signin*
+
 In the admin dashboard you can:
 * Create new categories. You can later edit or delete categories.
 * Create new products (with other details such as images and price). Categories must be selected from the existing ones. You can edit or delete product details and  unactivate or activate products in the Products Data Table.
