@@ -20,7 +20,9 @@ A navbar is present when going through the webpages, which links the other route
 #### Checkout
 For checkout, **stripe API** was implemented. A copy of the invoice will be sent to the client mail via the laravel mailing system when a product is purchased. Another copy, along with the payment ID, will be saved in the *Orders SQL database* and shown in the admins **Orders Data Table**.
 
+### Admin :
 
+Access: *goodbuy/admin
     
 
 
