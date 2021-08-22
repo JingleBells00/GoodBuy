@@ -35,11 +35,11 @@ Of the 27 routes, 11 routes can be viewed and have a blade, dynamic html file wh
 To be allowed to enter the backend admin you have to first go through the **laravel authentication system**, which will require you to signup first. An option is available which will send a email token for **resetting your password** if you forgot it. To signup use the url:
 *goodbuy/signin*
 In the admin dashboard you can:
-*Create new categories. You can later edit or delete categories.
-*Create new products (with other details such as images and price). Categories must be selected from the existing ones. You can edit or delete product details and  unactivate or activate products in the Products Data Table.
-*Upload new slider image with description, edit or delete existing ones, unactivate or activate sliders in the home page as well.  
-*View all orders with their details like client name, address, payment id and cart details in the Orders Data Table. An invoice will also be created as pdf if the *'details'* button is clicked. 
-*View current products and sliders in the Product Data Table and Sliders Data Table.
+* Create new categories. You can later edit or delete categories.
+* Create new products (with other details such as images and price). Categories must be selected from the existing ones. You can edit or delete product details and  unactivate or activate products in the Products Data Table.
+* Upload new slider image with description, edit or delete existing ones, unactivate or activate sliders in the home page as well.  
+* View all orders with their details like client name, address, payment id and cart details in the Orders Data Table. An invoice will also be created as pdf if the  'details' button is clicked. 
+* View current products and sliders in the Product Data Table and Sliders Data Table.
 
 Some validation is present such as the function will not allow you to enter the same category twice. All of changes made in admin dashboard will be effective in the client webpages. 
 
