@@ -8,7 +8,7 @@
 
 **Client :**
 
-The client webpages consists of 13 routes with different functions. The functions are given in the *ClientController*. Of the *13 routes*, 6 routes can be viewed and have a blade, dynamic html file which is accessable to all (except the checkout page, which can only be accessed if you are logged in as a user). The five routes can be viewed using url:
+The client webpages consists of **13 routes** with different functions. The functions are given in the *ClientController*. Of the 13 routes, 6 routes can be viewed and have a blade, dynamic html file which is accessable to all (except the checkout page, which can only be accessed if you are logged in as a user). The five routes can be viewed using url:
 * goodbuy.com
 * goodbuy/shop
 * goodbuy/cart
@@ -17,7 +17,7 @@ The client webpages consists of 13 routes with different functions. The function
 A navbar is present when going through the webpages, which links the other routes. 
 
 #### Checkout
-For checkout, *stripe API* was implemented. A copy of the bill will be sent to the client mail via the laravel mailing system when a product is purchased. Another copy, along with the payment ID, will be saved in the *Orders SQL database* and shown in the admins Orders *Data Table*.
+For checkout, **stripe API** was implemented. A copy of the bill will be sent to the client mail via the laravel mailing system when a product is purchased. Another copy, along with the payment ID, will be saved in the *Orders SQL database* and shown in the admins **Orders Data Table**.
 
 
     
