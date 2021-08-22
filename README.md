@@ -14,6 +14,7 @@ The client webpages consists of **13 routes** with different functions. The func
 * goodbuy/cart
 * goodbuy/loginv2
 * goodbuy/signup
+
 A navbar is present when going through the webpages, which links the other routes. 
 
 #### Checkout
