@@ -1,6 +1,6 @@
 # GoodBuy
 
-## An E-Commerce site for clothing, hand-made with PHP Laravel 7
+## An E-Commerce site for clothing, hand-made with PHP Laravel 8
 
 #### The site contains two parts:
 * **Client : Login/Signup; Cart; Billing; Enail with Invoice**
