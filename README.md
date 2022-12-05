@@ -1,7 +1,6 @@
 # GoodBuy
 
 ## An E-Commerce site for clothing, hand-made with PHP Laravel
-Live View: https://goodbuy-ecommerce.herokuapp.com/
 
 #### The site contains two parts:
 * **Client : Login/Signup; Cart; Billing; Enail with Invoice**
