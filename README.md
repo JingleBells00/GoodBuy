@@ -1,62 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# GoodBuy
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## An E-Commerce site for clothing, hand-made with PHP Laravel 8
 
-## About Laravel
+#### The site contains two parts:
+* **Client : Login/Signup; Cart; Billing; Enail with Invoice**
+* **Admin :  Product CRUD + Categorization; Slider Changer/Updater**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Client :
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The client webpages consists of **13 routes** with different functions. The functions are given in the *ClientController*. Of the 13 routes, 6 routes can be viewed and have a blade, dynamic html file which is accessable to all (except the checkout page, which can only be accessed if you are logged in as a user). The five routes can be viewed using url:
+* goodbuy.com
+* goodbuy/shop
+* goodbuy/cart
+* goodbuy/loginv2
+* goodbuy/signup
 
-## Learning Laravel
+A navbar is present when going through the webpages, which links the other routes. The functions implemented in the *ClientController* all follow standard E-Commerce site conventions like **sorting by category, adding to cart, updating or deleting products in cart, calculating the toal price by using product quantity and price,  showing activated products, form validation, login authrization and signup(with validation for both hashed password and email), routing, client sessions and slider manipulation.**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Checkout
+For checkout, **stripe API** was implemented. A copy of the invoice will be sent to the client mail via the laravel mailing system when a product is purchased. Another copy, along with the payment ID, will be saved in the *Orders SQL database* and shown in the admins **Orders Data Table**.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Admin :
 
-## Laravel Sponsors
+Access: goodbuy/admin
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+The admin webpages consists of **27 routes** with different functions. The functions are given in the follwowing controllers:
+* AdminController
+* CategoryController
+* ProductController
+* SliderController
+* PdfController
 
-### Premium Partners
+Of the 27 routes, 11 routes can be viewed and have a blade, dynamic html file which is accessable to all admins.
+To be allowed to enter the backend admin you have to first go through the **laravel authentication system**, which will require you to signup first. An option is available which will send a email token for **resetting your password** if you forgot it. To signup use the url:
+*goodbuy/signin*
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+In the admin dashboard you can:
+* Create new categories. You can later edit or delete categories.
+* Create new products (with other details such as images and price). Categories must be selected from the existing ones. You can edit or delete product details and  unactivate or activate products in the Products Data Table.
+* Upload new slider image with description, edit or delete existing ones, unactivate or activate sliders in the home page as well.  
+* View all orders with their details like client name, address, payment id and cart details in the Orders Data Table. An invoice will also be created as pdf if the  'details' button is clicked. 
+* View current products and sliders in the Product Data Table and Sliders Data Table.
 
-## Contributing
+Some validation is present such as the function will not allow you to enter the same category twice. All of changes made in admin dashboard will be effective in the client webpages. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
