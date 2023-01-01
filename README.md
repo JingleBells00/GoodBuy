@@ -13,9 +13,13 @@
 The client webpages consists of **13 routes** with different functions. The functions are given in the *ClientController*. Of the 13 routes, 6 routes can be viewed and have a blade, dynamic html file which is accessable to all (except the checkout page, which can only be accessed if you are logged in as a user). The five routes can be viewed using url:
 * goodbuy.com
 * goodbuy/shop
+
 ![goodbuy shop](https://user-images.githubusercontent.com/24864973/210167741-911d5ce0-7922-4ec4-af27-49ce3ab11056.png)
+
 * goodbuy/cart
+
 ![goodbuy cart](https://user-images.githubusercontent.com/24864973/210167750-eb48a4b0-c211-433d-8174-7adaf6038eeb.png)
+
 * goodbuy/loginv2
 * goodbuy/signup
 
@@ -27,6 +31,7 @@ For checkout, **stripe API** was implemented. A copy of the invoice will be sent
 
 ### Admin :
 ![goodbuy admin 1](https://user-images.githubusercontent.com/24864973/210167712-850fbeec-ce78-44e2-a0a7-d40664458cf1.png)
+
 Access: goodbuy/admin
 
 The admin webpages consists of **27 routes** with different functions. The functions are given in the follwowing controllers:
@@ -43,10 +48,13 @@ To be allowed to enter the backend admin you have to first go through the **lara
 In the admin dashboard you can:
 * Create new categories. You can later edit or delete categories.
 * Create new products (with other details such as images and price). Categories must be selected from the existing ones. You can edit or delete product details and  unactivate or activate products in the Products Data Table.
+
 ![goodbuy admin 2](https://user-images.githubusercontent.com/24864973/210167765-a4bfd97b-36bc-49dd-8019-f1c9e25f9ca7.png)
+
 * Upload new slider image with description, edit or delete existing ones, unactivate or activate sliders in the home page as well.  
 * View all orders with their details like client name, address, payment id and cart details in the Orders Data Table. An invoice will also be created as pdf if the  'details' button is clicked. 
 * View current products and sliders in the Product Data Table and Sliders Data Table.
+
 ![goodbuy admin 3](https://user-images.githubusercontent.com/24864973/210167761-2b3137cd-ba2b-49fb-bc33-77d46eb6eb55.png)
 
 
