@@ -42,7 +42,7 @@ All Products
                             @foreach($products as $product)
                             <tr>
                                 <td>{{$increment}}</td>
-                                <td><img src='/storage/product_images/{{$product->product_image}}' alt=''></td>
+                                <td><img src={{ asset('product_images/'.$product->product_image) }} alt=''></td>
                                 <td>{{$product->product_name}}</td>
                                 <td>{{$product->product_price}}</td>
                                 <td>{{$product->product_category}}</td>

@@ -45,19 +45,12 @@ class ProductController extends Controller
 
    if ($request->hasfile('product_image')) {
 
-    $fileNameWithExt = $request->file('product_image')->getClientOriginalName();
-    $fileNameWithExt = str_replace(' ', '', $fileNameWithExt); //remove spaces
- 
-
-    // $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
- 
-    // $extention = $request->file('slider_image')->getClientOriginalName();
- 
-    // $fileNameToStore = $fileName . '_' . time() . '.' . $extention;
- 
-    $path = $request->product_image->move(public_path('product_images'), $fileNameWithExt);
+    $file = $request->file('product_image') ;
+    $fileName = str_replace(' ', '', $file->getClientOriginalName());
+    $destinationPath = public_path().'/product_images' ;
+    $file->move($destinationPath,$fileName);
    } else {
-    $fileNameWithExt = 'noimage.jpg';
+    $fileName = 'noimage.jpg';
 
    }
 
@@ -69,7 +62,7 @@ class ProductController extends Controller
 
    $product->product_category = $request->input('product_category');
 
-   $product->product_image = $fileNameWithExt;
+   $product->product_image = $fileName;
 
    $product->status = 1;
 
@@ -107,16 +100,18 @@ class ProductController extends Controller
 
   if ($request->hasfile('product_image')) {
 
-   $fileNameWithExt = $request->file('product_image')->getClientOriginalName();
-
-   $path = $request->file('product_image')->storeAs('public/product_images', $fileNameWithExt);
+    $file = $request->file('product_image') ;
+    $fileName = str_replace(' ', '', $file->getClientOriginalName());
+    $destinationPath = public_path().'/product_images' ;
+    $file->move($destinationPath,$fileName);
 
    $old_image = Product::find($request->input('id'));
 
    if ($old_image != 'noimage.jpg') {
     Storage::delete('public/product_images/' . $old_image->product_image);
+
    }
-   $product->product_image = $fileNameWithExt;
+   $product->product_image = $fileName;
 
   }
   $product->update();

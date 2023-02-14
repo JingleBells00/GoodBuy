@@ -7,7 +7,7 @@ Shop
 @section('content')
 <!-- END nav -->
 
-<div class="hero-wrap hero-bread" style="background-image: url({{asset('frontend/images/art3.jpeg')}});>
+<div class="hero-wrap hero-bread" style="background-image: url({{asset('frontend/images/art3.jpeg')}});">
 	<div class=" container">
 	<div class="row no-gutters slider-text align-items-center justify-content-center">
 		<div class="col-md-9 ftco-animate text-center">

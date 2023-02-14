@@ -41,7 +41,7 @@ All sliders
                             @foreach($sliders as $slider)
                             <tr>
                                 <td>{{$increment}}</td>
-                                <td><img src='/storage/slider_images/{{$slider->slider_image}}' alt=''></td>
+                                <td><img src={{ asset('slider_images/'.$slider->slider_image) }} alt=''></td>
                                 <td>{{$slider->description1}}</td>
                                 <td>{{$slider->description2}}</td>
                                 <td>{{$slider->description1}}</td>

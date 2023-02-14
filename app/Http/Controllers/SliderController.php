@@ -24,21 +24,14 @@ class SliderController extends Controller
   $this->validate($request, ['description_one' => 'required', 'description_two' => 'required', 'slider_image' => 'image|nullable|max:5000']);
 
   if ($request->hasfile('slider_image')) {
-
-   $fileNameWithExt = $request->file('slider_image')->getClientOriginalName(); //get name
-   $fileNameWithExt = str_replace(' ', '', $fileNameWithExt); //remove spaces
-
-
-   // $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-
-   // $extention = $request->file('slider_image')->getClientOriginalName();
-
-   // $fileNameToStore = $fileName . '_' . time() . '.' . $extention;
-
-   $path = $request->slider_image->move(public_path('slider_images'), $fileNameWithExt); //store in folder
+    
+    $file = $request->file('slider_image') ;
+    $fileName = str_replace(' ', '', $file->getClientOriginalName());
+    $destinationPath = public_path().'/slider_images' ;
+    $file->move($destinationPath,$fileName);
 
   } else {
-   $fileNameWithExt = 'noimage.jpg';
+   $fileName = 'noimage.jpg';
 
   }
 
@@ -48,7 +41,7 @@ class SliderController extends Controller
 
   $slider->description2 = $request->input('description_two');
 
-  $slider->slider_image = $fileNameWithExt;
+  $slider->slider_image = $fileName;
 
   $slider->status = 1;
 
@@ -97,16 +90,17 @@ class SliderController extends Controller
 
   if ($request->hasfile('slider_image')) {
 
-   $fileNameWithExt = $request->file('slider_image')->getClientOriginalName();
-
-   $path = $request->file('slider_image')->storeAs('public/slider_images', $fileNameWithExt);
+    $file = $request->file('slider_image') ;
+    $fileName = str_replace(' ', '', $file->getClientOriginalName());
+    $destinationPath = public_path().'/slider_images' ;
+    $file->move($destinationPath,$fileName);
 
    $old_image = Slider::find($request->input('id'));
 
    if ($old_image != 'noimage.jpg') {
     Storage::delete('public/slider_images/' . $old_image->slider_image);
    }
-   $slider->slider_image = $fileNameWithExt;
+   $slider->slider_image = $fileName;
 
   }
   $slider->update();
