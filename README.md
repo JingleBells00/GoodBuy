@@ -8,6 +8,16 @@
 
 ![Goodbuy Home](https://user-images.githubusercontent.com/24864973/210167723-fd744eee-6eb9-407a-8e4d-3a1a1462c75d.png)
 
+### Installation
+1. Unzip the downloaded archive
+2. Copy and paste **aqm** folder in your htdocs folder
+3. In your terminal run `composer install`
+4. Update your `.env` configurations accordingly (mainly the database configuration)
+5. In your terminal run `php artisan key:generate`
+6. Run `php artisan migrate` to create the database tables 
+7. Go to mysql and manually import 'stationwises_table_data2' from root folder to populate the the database
+8. Test!
+
 ### Client :
 
 The client webpages consists of **13 routes** with different functions. The functions are given in the *ClientController*. Of the 13 routes, 6 routes can be viewed and have a blade, dynamic html file which is accessable to all (except the checkout page, which can only be accessed if you are logged in as a user). The five routes can be viewed using url:
