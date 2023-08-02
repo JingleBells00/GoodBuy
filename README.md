@@ -10,8 +10,8 @@
 
 ### Installation
 1. Unzip the downloaded archive
-2. Copy and paste **aqm** folder in your htdocs folder
-3. In your terminal run `composer install`
+2. Copy and paste **Goodbuy-laravel-master** folder in your htdocs folder
+3. In your git bash terminal run `composer install`
 4. Update your `.env` configurations accordingly (mainly the database configuration)
 5. In your terminal run `php artisan key:generate`
 6. Run `php artisan migrate` (make sure you have xampp on) to create the database tables 
