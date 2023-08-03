@@ -14,9 +14,8 @@
 3. In your git bash terminal run `composer install`
 4. Update your `.env` configurations accordingly (mainly the database configuration)
 5. In your terminal run `php artisan key:generate`
-6. Run `php artisan migrate` (make sure you have xampp on) to create the database tables 
-7. Go to mysql and manually import 'stationwises_table_data2' from root folder to populate the the database
-8. Test!
+6. Run `php artisan migrate` (make sure you have xampp on) to create the database tables
+7. Test!
 
 ### Client :
 
