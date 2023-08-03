@@ -10,7 +10,7 @@
 
 ### Installation
 1. Unzip the downloaded archive
-2. Copy and paste **Goodbuy-laravel-master** folder in your htdocs folder
+2. Copy and paste unzipped folder in your htdocs folder
 3. In your git bash terminal run `composer install`
 4. Update your `.env` configurations accordingly (mainly the database configuration)
 5. In your terminal run `php artisan key:generate`
