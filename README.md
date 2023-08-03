@@ -3,8 +3,8 @@
 ## An E-Commerce site for clothing, hand-made with PHP Laravel 8
 
 #### The site contains two parts:
-* **Client : Login/Signup; Cart; Billing; Enail with Invoice**
-* **Admin :  Product CRUD + Categorization; Slider Changer/Updater**
+* **Client : Login/Signup, Cart, Billing, Enail with Invoice**
+* **Admin :  Product CRUD & Categorization, Slider Changer/Updater, View Data tables**
 
 ![Goodbuy Home](https://user-images.githubusercontent.com/24864973/210167723-fd744eee-6eb9-407a-8e4d-3a1a1462c75d.png)
 
